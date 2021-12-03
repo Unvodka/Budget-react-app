@@ -19,10 +19,10 @@ const Login = () => {
         e.preventDefault()
         try {
             const res = await axios.post('http://localhost:3005/user/login', user)
-            console.log(res.data)
 
             localStorage.setItem('firstLogin', true)
             localStorage.setItem('accessToken', res.data.accesstoken)
+            localStorage.setItem('user-info', user.email)
 
             window.location.href = "/envelopes";
         } catch (err) {
@@ -43,7 +43,7 @@ const Login = () => {
               <label htmlFor="exampleInputPassword1" className="form-label mt-4">Password</label>
               <input type="password" name="password" value={user.password} onChange={onChangeInput} className="form-control" id="exampleInputPassword1" placeholder="Password" ></input>
             </div>
-            <button className="btn-form" type="submit">Login</button>
+            <button className="btn-login" type="submit">Login</button>
             <Link to="/register">Register</Link>
       </fieldset>
     </form>

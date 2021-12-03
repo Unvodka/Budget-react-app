@@ -1,9 +1,7 @@
 const Envelopes = require('../models/envelopeModel')
 const Actions = require('../models/actionModel')
 
-function add (a, b) {
-    a + b 
-}
+
 
 const envelopeCtrl = {
     
@@ -79,22 +77,25 @@ const envelopeCtrl = {
             try {
                 const {nameFrom, transaction, nameTo} = req.body
                 
+                const transactionParsed = parseInt(transaction, 10)
+
                 const envelopeFrom = await Envelopes.findOne({name: nameFrom})
                 const envelopeTo = await Envelopes.findOne({name: nameTo})
-                
+
                 if (!envelopeTo) return res.status(400).json({msg: "This envelope does not exists, please create it first"})
                 if (!envelopeFrom) return res.status(400).json({msg: "This envelope does not exists, please create it first"})
 
-                if(envelopeFrom.amount > transaction) {
-                    envelopeFrom.amount = envelopeFrom.amount - transaction
-                    envelopeTo.amount = envelopeTo.amount + transaction
+                if(envelopeFrom.amount > transactionParsed) {
+                    console.log(envelopeTo.amount, transactionParsed)
                     
+                    envelopeFrom.amount = envelopeFrom.amount - transactionParsed
+                    envelopeTo.amount = envelopeTo.amount + transactionParsed
 
                     envelopeTo.save()
                     envelopeFrom.save()
 
-                    const actionFrom = new Actions({envelopeId: envelopeFrom.id , transaction})
-                    const actionTo = new Actions({envelopeId: envelopeTo.id, transaction})
+                    const actionFrom = new Actions({envelopeId: envelopeFrom.id , transactionParsed})
+                    const actionTo = new Actions({envelopeId: envelopeTo.id, transactionParsed})
                     actionFrom.save()
                     actionTo.save()
 
@@ -112,7 +113,7 @@ const envelopeCtrl = {
 
             try {
                 const {id} = req.body
-                const query = await Envelopes.deleteOne({id})
+                const query = await Envelopes.deleteOne({_id: id})
                
                 if (query.deletedCount === 0) return res.status(500).json({msg: "This envelope could not be delete, please try again"})
                 

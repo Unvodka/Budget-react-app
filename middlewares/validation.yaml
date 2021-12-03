@@ -1,0 +1,16 @@
+# import React from 'react'
+
+# const validation = () => {
+  
+#   const validNumber = (x) => {
+#     if( x.isNumber() !== true ) {
+#       return console.error(`${x} is not a number, please enter a number`);
+#     }
+#   }
+#   const validString = (y) => {
+#     if (y.isString() !== true ) {
+#       return console.error(`${y} is not a chain of character(string), please enter characters only`);
+#     }
+#   }
+# }
+#  export default validation;

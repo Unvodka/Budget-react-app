@@ -41,11 +41,10 @@ const Register = () => {
               <label htmlFor="password">Password</label>
               <input type="password" id="password" name="password" value={user.password} onChange={onChangeInput} placeholder="Password" required></input>
             </div>
-            <button className="btn-form">Register</button>
-            <br/>
 
-           
-            <Link to="/login"><button className="btn-form" type="submit">Login</button></Link>
+            <button className="btn-login">Register</button>
+            
+            <Link to="/login" >Login</Link>
 
       </fieldset>
     </form>

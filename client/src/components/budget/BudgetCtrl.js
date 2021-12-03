@@ -6,8 +6,7 @@ import EnvelopesAPI from '../../api/envelopes'
 const BudgetCtrl = () => {
 
   const [products, setProducts] = useState([])
-
-  //methods
+  let total = 0;
 
   const Create = async (e) => {
     e.preventDefault()
@@ -54,6 +53,7 @@ const BudgetCtrl = () => {
       transaction: e.target[1].value,
       nameTo: e.target[2].value
     }
+    
     const res = await EnvelopesAPI.transfer(body)
     setProducts([...products])
 
@@ -84,9 +84,16 @@ const BudgetCtrl = () => {
     getProducts()
   }, []) 
 
+  
+  products.map(product => {
+    return total = total + product.amount
+  })
 
   return (
     <div>
+      
+      <div className="products">Total Budget: {total}</div>
+
       <Envelopes products={products} onClick={onClick}/>
       <Transaction Create={Create} Update={Update} Transfer={Transfer}/>
     </div>
