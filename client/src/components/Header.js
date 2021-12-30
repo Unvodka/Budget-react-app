@@ -1,23 +1,25 @@
 import React from 'react'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import './Header.css'
 
 const Header = () => {
   let user = localStorage.getItem('user-info')
-  console.log(user)
 
-    function logOut () {
+  function logOut () {
     localStorage.clear();
-    
+    sessionStorage.clear();
   }
+  
   return (
     <>
       <div className='header'>
-        { localStorage.getItem('user-info') ? 
+        
+        { sessionStorage.getItem('activeSession') ?
         <div className="logout-dropdown" >{user && user} 
-          <a href="/login"><button className="logout" onClick={logOut}>Logout</button></a>
-        </div>  
-        : null} 
+        <a href="/login"><button className="logout" onClick={logOut}>Logout</button></a>
+      </div>  
+      : null
+        }
+
         <h1>Budget manager</h1>
       </div>      
     </>

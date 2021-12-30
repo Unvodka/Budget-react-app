@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  color: rgb(90, 88, 88);
+  padding: 1rem;
+  text-align: center;
+  margin: 1%;
+  align-items: center;
+  height: 10rem;
+}
+.header h1 {
+  margin-left: 32.5%;
+  margin-right: 20%;
+}
+
+@media screen and (max-width: 499px) {
+  .header h1 {
+    margin: 15px;
+  }
+}

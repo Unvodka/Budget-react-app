@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const envelopeCtrl = require('../controllers/envelopeCtrl')
+const salaryCtrl = require('../controllers/salaryCtrl')
 const auth = require('../middlewares/auth')
 const swaggerValidation = require('openapi-validator-middleware');
 

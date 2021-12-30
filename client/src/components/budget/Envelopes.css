@@ -1,0 +1,21 @@
+.products {
+  display: flex;
+  margin: 1rem auto;
+  width: 200px;
+}
+.products p {
+  font-weight: 600;
+}
+.products div {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and(max-width: 720px) {
+  .products {
+    display: flex;
+    flex-direction: column;
+    margin-left: 35% !important;
+  }
+}

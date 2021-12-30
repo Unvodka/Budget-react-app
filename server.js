@@ -9,6 +9,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const userRouter = require('./routes/userRouter')
 const envelopesRouter = require('./routes/envelopesRouter')
+const salaryRouter = require('./routes/salaryRouter')
 
 //middlewares
 app.use(express.json())
@@ -19,8 +20,10 @@ app.use(cors())
 
 
 // Routes
+
 app.use('/user', userRouter)
 app.use('/envelopes', envelopesRouter)
+app.use('/salary', salaryRouter)
 
 // Database connection 
 const URI = process.env.DB_CONNECT;

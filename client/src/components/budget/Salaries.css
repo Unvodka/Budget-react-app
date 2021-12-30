@@ -1,0 +1,19 @@
+.salary {
+  font-weight: 600;
+  max-width: 70%;
+  position: absolute;
+  left: 10%;
+  top:20%;
+  margin: 2rem;
+}
+
+@media screen and (max-width: 720px) {
+  .salary {
+    position: relative;
+    left: 15%;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

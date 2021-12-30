@@ -1,4 +1,5 @@
 import React from 'react'
+import './Transaction.css'
 
 const Transaction = ({Create, Update, Transfer}) => {  
 

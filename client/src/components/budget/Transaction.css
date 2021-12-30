@@ -1,0 +1,14 @@
+.transactions {
+  margin-top: 3rem;
+}
+
+.create, .transfer, .update {
+  text-align: center;
+  padding: 20px;
+}
+
+@media screen and (min-width: 999px) {
+  .transactions {
+    margin-right: 10%;
+  }
+}

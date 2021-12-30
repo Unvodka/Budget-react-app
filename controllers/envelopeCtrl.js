@@ -2,7 +2,6 @@ const Envelopes = require('../models/envelopeModel')
 const Actions = require('../models/actionModel')
 
 
-
 const envelopeCtrl = {
     
         createEnvelope: async (req, res) => {

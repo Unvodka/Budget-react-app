@@ -1,6 +1,10 @@
 import axios from "axios"
 
-const BASE_URL = `http://localhost:3005`
+let BASE_URL = "https://www.budget-react-app.online"
+
+if(process.env.NODE_ENV === 'dev') {
+  BASE_URL = `http://localhost:3005`
+}
 
 export const apiBase = async (method, path, body, config) => {
   

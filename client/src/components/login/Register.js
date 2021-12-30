@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import './Login-register.css'
 
 const Register = () => {
     const [user, setUser] = useState({
@@ -44,7 +45,7 @@ const Register = () => {
 
             <button className="btn-login">Register</button>
             
-            <Link to="/login" >Login</Link>
+            <Link to="/login" >LOGIN</Link>
 
       </fieldset>
     </form>

@@ -1,16 +1,103 @@
-# import React from 'react'
-
-# const validation = () => {
-  
-#   const validNumber = (x) => {
-#     if( x.isNumber() !== true ) {
-#       return console.error(`${x} is not a number, please enter a number`);
-#     }
-#   }
-#   const validString = (y) => {
-#     if (y.isString() !== true ) {
-#       return console.error(`${y} is not a chain of character(string), please enter characters only`);
-#     }
-#   }
-# }
-#  export default validation;
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
+servers:
+  - url: http://localhost:3005
+    description: Optional server description, e.g. Main (production) server
+  - url: http://localhost:3005
+    description: Optional server description, e.g. Internal staging server for testing
+paths:
+  /users:
+    post:
+      summary: Creates a user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/models/userModel"
+      responses: 
+        '201':
+          description: Created
+  /envelopes:
+    get:
+      summary: Returns a list of envelopes.
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        '200':    # status code
+          description: A JSON array of envelopes
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                 type: string
+    post:
+      summary: Creates a envelope.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/models/envelopeModel"
+      responses: 
+        '201':
+          description: Created
+  /update:
+    put:
+      summary: Updates a envelope.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                amount:
+                  type: number
+      responses: 
+        '201':
+          description: Updated
+          content:
+            application/json:
+              schema: 
+                type: object
+    delete:
+      summary: Deletes a envelope.
+      responses: 
+        '201':
+          description: Deleted
+  /transfer:
+    put:
+      summary: Transfer from a envelope to another envelope.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nameFrom:
+                  type: string
+                amount:
+                  type: number
+                nameTo:
+                  type: string
+      responses: 
+        '201':
+          description: Transfer done successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nameFrom:
+                    type: string
+                  amount:
+                    type: number
+                  nameTo:
+                    type: string

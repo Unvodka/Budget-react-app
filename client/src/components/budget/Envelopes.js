@@ -1,4 +1,5 @@
 import React from 'react'
+import './Envelopes.css'
 
 const Envelopes = ({products, onClick}) =>  {
 

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import './Login-register.css'
 
 const Login = () => {
 
@@ -23,6 +24,8 @@ const Login = () => {
             localStorage.setItem('firstLogin', true)
             localStorage.setItem('accessToken', res.data.accesstoken)
             localStorage.setItem('user-info', user.email)
+            
+            sessionStorage.setItem('activeSession', 'true')
 
             window.location.href = "/envelopes";
         } catch (err) {
@@ -44,7 +47,7 @@ const Login = () => {
               <input type="password" name="password" value={user.password} onChange={onChangeInput} className="form-control" id="exampleInputPassword1" placeholder="Password" ></input>
             </div>
             <button className="btn-login" type="submit">Login</button>
-            <Link to="/register">Register</Link>
+            <Link to="/register">REGISTER</Link>
       </fieldset>
     </form>
   )

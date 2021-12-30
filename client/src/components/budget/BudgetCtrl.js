@@ -2,11 +2,33 @@ import React, { useEffect, useState } from 'react'
 import Envelopes from './Envelopes'
 import Transaction from './Transaction'
 import EnvelopesAPI from '../../api/envelopes'
+import Salaries from './Salaries';
+import SalariesAPI from '../../api/salaries'
+
 
 const BudgetCtrl = () => {
 
+
   const [products, setProducts] = useState([])
+  const [salary, setSalary] = useState({})
+
   let total = 0;
+
+  const Add = async (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    
+    const body = {
+      amount: e.target[0].value
+    }
+    const res = await SalariesAPI.create(body)
+        
+    setSalary(res.data)
+    console.log(salary)
+
+    e.target[0].value = ''
+
+  }
 
   const Create = async (e) => {
     e.preventDefault()
@@ -71,6 +93,15 @@ const BudgetCtrl = () => {
   }
 
   useEffect(() =>{
+    const getSalary = async () => {
+      try {
+        const res = await SalariesAPI.fetch()
+        setSalary(res.data)
+        
+      } catch (err) {
+        console.log(err)
+      }
+    }
     const getProducts = async () => {
 
       try {
@@ -82,6 +113,7 @@ const BudgetCtrl = () => {
       }
     }
     getProducts()
+    getSalary()
   }, []) 
 
   
@@ -91,8 +123,9 @@ const BudgetCtrl = () => {
 
   return (
     <div>
+      <Salaries salaries={salary} Add={Add}/>
       
-      <div className="products">Total Budget: {total}</div>
+      <div className="products"><p>Total Budget: {total}</p></div>
 
       <Envelopes products={products} onClick={onClick}/>
       <Transaction Create={Create} Update={Update} Transfer={Transfer}/>
