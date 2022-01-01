@@ -6,7 +6,7 @@ const Salaries = ({ salaries, Add }) => {
   return (
     
     <div key={salaries.id} className='salary'>
-      <p>Your current salary is : {[salaries.amount]} </p>
+      <p>Your current salary is : {[salaries.amount]} $ </p>
 
       <form className='salary-form' onSubmit={Add}>
 

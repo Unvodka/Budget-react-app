@@ -11,6 +11,7 @@ const BudgetCtrl = () => {
 
   const [products, setProducts] = useState([])
   const [salary, setSalary] = useState({})
+  const [alertBudget, setAlertBudget] = useState(false)
 
   let total = 0;
 
@@ -92,6 +93,8 @@ const BudgetCtrl = () => {
     setProducts([...products.filter((product) => product._id !== id)])
   }
 
+ 
+
   useEffect(() =>{
     const getSalary = async () => {
       try {
@@ -121,11 +124,71 @@ const BudgetCtrl = () => {
     return total = total + product.amount
   })
 
+  const saving = salary.amount - total
+  
   return (
-    <div>
-      <Salaries salaries={salary} Add={Add}/>
+    <div className='salary-previsions'>
       
-      <div className="products"><p>Total Budget: {total}</p></div>
+      <Salaries salaries={salary} Add={Add}/>
+
+      {saving < 100 ? <h3 className='red'>Alert Budget, your saving is low</h3> : ""}
+      <h3>Saving</h3>
+
+      <div className='previsions'>
+        <table>
+          <thead>
+            <tr>
+              <th>MONTH previsions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{saving} $</td>
+            </tr>
+          </tbody>
+        </table> 
+
+        <table>
+          <thead>
+            <tr>
+              <th>3 MONTHS previsions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{saving *3} $</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th>6 MONTHs previsions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{saving * 6} $</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th>YEAR previsions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{saving * 12} $</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div className="products"><p>Total Budget: {total} $</p></div>
 
       <Envelopes products={products} onClick={onClick}/>
       <Transaction Create={Create} Update={Update} Transfer={Transfer}/>
