@@ -51,7 +51,7 @@
     margin: 20px;
   }
   .login {
-    max-width: 400px;
+    max-width: 100%;
     width: 60%;
   }
 }

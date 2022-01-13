@@ -2,10 +2,9 @@ h3 {
   text-align: center;
   color: whitesmoke;
   width: 150px;
-  margin: 2rem 46%;
-  border-bottom: 1px solid rgb(3, 3, 3);
+  margin: 1rem 46%;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   letter-spacing: 1px;
   max-width: 90%;
 }
