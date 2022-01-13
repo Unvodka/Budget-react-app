@@ -30,6 +30,7 @@ const Login = () => {
             window.location.href = "/envelopes";
         } catch (err) {
             alert(err.response.data.msg)
+            console.log(err)
         }
     }
   
@@ -39,11 +40,11 @@ const Login = () => {
         <legend>Login or Register</legend>
 
             <div className="form-group">
-              <label htmlFor="exampleInputEmail1" className="form-label mt-4">Email address</label>
+              <label htmlFor="email">Email address</label>
               <input type="email" name="email" value={user.email} onChange={onChangeInput} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ></input>
             </div>
             <div className="form-group">
-              <label htmlFor="exampleInputPassword1" className="form-label mt-4">Password</label>
+              <label htmlFor="password">Password</label>
               <input type="password" name="password" value={user.password} onChange={onChangeInput} className="form-control" id="exampleInputPassword1" placeholder="Password" ></input>
             </div>
             <button className="btn-login" type="submit">Login</button>

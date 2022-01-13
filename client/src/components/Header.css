@@ -6,14 +6,23 @@
   margin: 1%;
   align-items: center;
   height: 10rem;
+  max-width: 90%;
 }
 .header h1 {
-  margin-left: 32.5%;
-  margin-right: 20%;
+  margin-left: 37%;
 }
 
 @media screen and (max-width: 499px) {
   .header h1 {
-    margin: 15px;
+    margin: 10px;
+    margin-left: 10%;
+  }
+  .header {
+    max-width: 400px;
+    margin: 0;
+    padding: 0;
+  }
+  .logout-dropdown {
+    margin-left: 10px;
   }
 }

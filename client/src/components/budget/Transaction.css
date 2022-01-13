@@ -1,14 +1,24 @@
 .transactions {
   margin-top: 3rem;
+  max-width: 90%;
+}
+.transactions input {
+  margin-left: 20px;
 }
 
 .create, .transfer, .update {
   text-align: center;
   padding: 20px;
+  margin: 10px;
 }
 
 @media screen and (min-width: 999px) {
   .transactions {
     margin-right: 10%;
+  }
+}
+@media screen and (max-width: 499px) {
+  .transactions input {
+    margin-left: 20px;
   }
 }

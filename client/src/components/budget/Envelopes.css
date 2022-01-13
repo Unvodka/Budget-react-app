@@ -1,7 +1,10 @@
 .products {
   display: flex;
   margin: 1rem auto;
-  width: 200px;
+  width: 170px;
+  background-color: rgb(121, 160, 235);
+  padding: 10px;
+  border: 1px solid black
 }
 .products p {
   font-weight: 600;
@@ -10,6 +13,9 @@
   text-align: center;
   display: flex;
   flex-direction: row;
+}
+.total {
+  text-align: center;
 }
 
 @media screen and(max-width: 720px) {

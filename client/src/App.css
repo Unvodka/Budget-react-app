@@ -10,6 +10,7 @@
   border: 1px solid black;
   background: url(./background.jpg);
   background-size: cover;
+  overflow-x: hidden;
 }
 
 a {
@@ -44,7 +45,7 @@ a {
 
 input {
   text-align: center;
-  margin-left: 1rem;
+  margin-left: 0rem;
   height: 2rem;
   border: none;
   border-bottom: 1px solid black;
@@ -52,4 +53,8 @@ input {
 }
 form {
   font-weight: bolder;
+}
+
+@media screen and (max-width: 499px) {
+
 }

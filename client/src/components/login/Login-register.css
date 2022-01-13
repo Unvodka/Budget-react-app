@@ -38,7 +38,6 @@
   flex-direction: column;
   padding: 1rem;
   margin: 1rem auto;
-  
 }
 .login div, label, input {
   margin: 0.25rem;
@@ -46,4 +45,13 @@
 .login div {
   height: 2rem;
   margin: 0.25rem auto
+}
+@media screen and (max-width: 429px) {
+  label, .login div {
+    margin: 20px;
+  }
+  .login {
+    max-width: 400px;
+    width: 60%;
+  }
 }

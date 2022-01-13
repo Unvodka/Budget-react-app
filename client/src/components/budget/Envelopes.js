@@ -15,7 +15,7 @@ const Envelopes = ({products, onClick}) =>  {
       return(
         <div key={product.id + product.name} className='products'>
           <button className='btn-delete' onClick={onClickFactory(product._id)}>X</button>
-          {[product.name + ':  '+ product.amount]}
+          {[product.name + ':  '+ product.amount + ' $']}
         </div>
       )
     })

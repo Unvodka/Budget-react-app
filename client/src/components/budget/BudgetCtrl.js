@@ -132,7 +132,8 @@ const BudgetCtrl = () => {
       <Salaries salaries={salary} Add={Add}/>
 
       {saving < 100 ? <h3 className='red'>Alert Budget, your saving is low</h3> : ""}
-      <h3>Saving</h3>
+      {saving < 100 ? <h3 className='red'>Your Saving</h3> : <h3 className='green'>Your Saving</h3>}
+     
 
       <div className='previsions'>
         <table>
@@ -188,7 +189,7 @@ const BudgetCtrl = () => {
         </table>
       </div>
       
-      <div className="products"><p>Total Budget: {total} $</p></div>
+      <div className="total"><p>Total Budget: {total} $</p></div>
 
       <Envelopes products={products} onClick={onClick}/>
       <Transaction Create={Create} Update={Update} Transfer={Transfer}/>

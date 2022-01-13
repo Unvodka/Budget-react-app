@@ -1,21 +1,27 @@
 h3 {
   text-align: center;
-  background-color: rgb(71, 71, 71);
   color: whitesmoke;
-  width: 100px;
-  margin: 0 auto;
-  border: 2px solid whitesmoke;
+  width: 150px;
+  margin: 2rem 46%;
+  border-bottom: 1px solid rgb(3, 3, 3);
   border-radius: 5px;
+  padding: 10px;
+  letter-spacing: 1px;
+  max-width: 90%;
 }
 .red {
   background-color: rgb(189, 35, 35);
   border: 1px solid black;
 }
+.green {
+  background-color: rgb(41, 119, 41);
+  border-radius: 0;
+}
 .salary {
   font-weight: 600;
   max-width: 70%;
   position: relative;
-  left: 10%;
+  left: 43%;
   top:20%;
   margin: 2rem;
 }
@@ -24,9 +30,11 @@ h3 {
   flex-direction: column;
 }
 .previsions {
+  max-width: 90%;
   display: flex;
   justify-content: center;
   margin-bottom: 3rem;
+  margin-left: 4.5%;
 }
 
 table {
@@ -55,9 +63,16 @@ td {
     justify-content: center;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 499px) {
   .previsions {
     display: flex;
     flex-direction: column;
+  }
+  .salary {
+    left: 0;
+  }
+  h3 {
+    margin: auto;
+    width: 100px;
   }
 }
