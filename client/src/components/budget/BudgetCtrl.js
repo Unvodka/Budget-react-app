@@ -16,16 +16,13 @@ const BudgetCtrl = () => {
   let total = 0;
 
   const Add = async (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    
+        
     const body = {
       amount: e.target[0].value
     }
     const res = await SalariesAPI.create(body)
         
     setSalary(res.data)
-    console.log(salary)
 
     e.target[0].value = ''
 
