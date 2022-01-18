@@ -1,13 +1,11 @@
-FROM node:12
+FROM node:16
 
 WORKDIR /client
 
-COPY package*.json /client/
+COPY . /client/
 
 RUN npm install
 
-COPY . /client/
-
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["npm", "start"]
