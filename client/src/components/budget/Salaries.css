@@ -18,11 +18,11 @@ h3 {
 }
 .salary {
   font-weight: 600;
-  max-width: 70%;
+  max-width: 80%;
   position: relative;
-  left: 43%;
+  left: 40%;
   top:20%;
-  margin: 2rem;
+  margin: 4rem;
 }
 .main {
   display: flex;

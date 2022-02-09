@@ -4,6 +4,7 @@ import Transaction from './Transaction'
 import EnvelopesAPI from '../../api/envelopes'
 import Salaries from './Salaries';
 import SalariesAPI from '../../api/salaries'
+import './Envelopes.css'
 
 
 const BudgetCtrl = () => {
@@ -188,7 +189,7 @@ const BudgetCtrl = () => {
       
       <div className="total"><p>Total Budget: {total} $</p></div>
 
-      <Envelopes products={products} onClick={onClick}/>
+      <Envelopes products={products} onClick={onClick} className="products-list"/>
       <Transaction Create={Create} Update={Update} Transfer={Transfer}/>
     </div>
   )

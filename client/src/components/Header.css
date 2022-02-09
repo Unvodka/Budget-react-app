@@ -9,7 +9,7 @@
   max-width: 90%;
 }
 .header h1 {
-  margin-left: 37%;
+  margin: auto;
 }
 
 @media screen and (max-width: 499px) {
@@ -24,5 +24,13 @@
   }
   .logout-dropdown {
     margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 299px) {
+  .header {
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
   }
 }

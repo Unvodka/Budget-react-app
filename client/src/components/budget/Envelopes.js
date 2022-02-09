@@ -1,5 +1,12 @@
-import React from 'react'
 import './Envelopes.css'
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+import moneyIcon from '../../icons/coins-solid.svg'
+
 
 const Envelopes = ({products, onClick}) =>  {
 
@@ -10,15 +17,28 @@ const Envelopes = ({products, onClick}) =>  {
   }
   
   return (
-    
-    products.map(product => {
-      return(
-        <div key={product.id + product.name} className='products'>
-          <button className='btn-delete' onClick={onClickFactory(product._id)}>X</button>
-          {[product.name + ':  '+ product.amount + ' $']}
-        </div>
-      )
-    })
+    <div className='products-list'>
+      {products.map(product => {
+        return(
+          <Card key={product.id + product.name} className='products'sx={{ maxWidth: 345 }}>
+            <button className='btn-delete btn-delete-envelope' onClick={onClickFactory(product._id)}>X</button>
+            <CardActionArea>
+              <CardMedia
+                className='img-product'
+                component="img"
+                image={moneyIcon}
+                alt="envelopes"
+              />
+              <CardContent className='card-content'>
+                    <div className='envelopes-txt'>
+                      {[product.name + ':  '+ product.amount + ' $']}
+                    </div>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        )
+      })}
+    </div>
   )
 }
 
