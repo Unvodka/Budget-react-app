@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css'
 
 const Header = () => {
-  let user = localStorage.getItem('user-info')
+  const user = localStorage.getItem('user-info')
 
   function logOut () {
     localStorage.clear();

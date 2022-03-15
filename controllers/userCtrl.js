@@ -1,10 +1,11 @@
 const Users = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const Envelopes = require('../models/envelopeModel')
 
 const userCtrl = {
+    
     register: async (req, res) =>{
+        
         try {
             const {name, email, password} = req.body;
 
@@ -13,6 +14,14 @@ const userCtrl = {
 
             if(password.length < 6) 
                 return res.status(400).json({msg: "Your password must be at least 6 characters long."})
+            if(password === name || password === email)
+                return res.status(400).json({msg: "Your password must be different than your name or email."})
+
+            function emailIsValid (email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+            }
+            if(!emailIsValid(email))
+                return res.status(400).json({msg: "Your email must be valid"})
 
             // Password Encryption
             const passwordHash = await bcrypt.hash(password, 10)

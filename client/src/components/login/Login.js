@@ -5,8 +5,6 @@ import './Login-register.css'
 
 const Login = () => {
 
-  // accesstoken ? if yes, redirect
-
     const [user, setUser] = useState({
         email:'', password: ''
     })
@@ -45,7 +43,7 @@ const Login = () => {
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" name="password" value={user.password} onChange={onChangeInput} className="form-control" id="exampleInputPassword1" placeholder="Password" ></input>
+              <input type="password" name="password" autoComplete='true' value={user.password} onChange={onChangeInput} className="form-control" id="exampleInputPassword1" placeholder="Password" ></input>
             </div>
             <button className="btn-login" type="submit">Login</button>
             <Link to="/register">REGISTER</Link>

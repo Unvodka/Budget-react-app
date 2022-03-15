@@ -3,6 +3,7 @@
   border: 1px solid black;
   width: 200px;
   padding: 10px !important;
+  margin: 10px;
 }
 .products-list {
   display: flex;

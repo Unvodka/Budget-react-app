@@ -6,19 +6,11 @@ services:
       build: ./
       ports:           
         - "3005:3005"
-      depends_on:
-        - mongo
   client:
       container_name: client
       restart: always
       build: ./client
       ports:
-        - "80:80"
+        - "3000:3000"
       depends_on:
         - app
-  mongo:
-      container_name: mongo
-      restart: always
-      image: mongo
-      ports:
-        - "27017:27017"
