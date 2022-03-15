@@ -1,6 +1,4 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+require('dotenv').config()
 
 const express = require('express')
 const app = express()
@@ -43,9 +41,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Database connection 
-const dbURI = process.env.DB_CONNECT;
+const URI = process.env.DB_CONNECT;
 
-mongoose.connect(dbURI, {
+mongoose.connect(URI, {
   useNewUrlParser: true,
 }, err => {
   if(err) throw err;
