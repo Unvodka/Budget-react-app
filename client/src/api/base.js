@@ -1,6 +1,7 @@
 import axios from "axios"
 
-let BASE_URL = "http://www.budget-react-app.online:3005"
+let BASE_URL 
+// = "http://www.budget-react-app.online:3005"
 
 if(process.env.NODE_ENV !== 'production') {
   BASE_URL = `http://localhost:3005`
