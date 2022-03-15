@@ -1,5 +1,5 @@
-require('dotenv').config()
-
+const config = require('./config/index')
+const { MONGO_URI, MONGO_DB_NAME, PORT } = config;
 const express = require('express')
 const app = express()
 const cors = require("cors")
@@ -30,6 +30,16 @@ app.use('/user', userRouter)
 app.use('/envelopes', envelopesRouter)
 app.use('/salary', salaryRouter)
 
+// DB Config
+const db = `${MONGO_URI}/${MONGO_DB_NAME}`;
+
+mongoose.connect(db, {
+  useNewUrlParser: true,
+}, err => {
+  if(err) throw err;
+  console.log('Connected to mongoose')
+})
+
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -40,16 +50,5 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// Database connection 
-const URI = process.env.DB_CONNECT;
-
-mongoose.connect(URI, {
-  useNewUrlParser: true,
-}, err => {
-  if(err) throw err;
-  console.log('Connected to mongoose')
-})
-
-
-const port = process.env.PORT
+const port = PORT || 3005
 app.listen(port, () => console.log(`Server listening on port: ${port}`))
