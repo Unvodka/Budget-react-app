@@ -5,15 +5,12 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express')
 const app = express()
 const cors = require("cors")
-
 const cookieParser = require('cookie-parser')
 const cookieSession = require('cookie-session')
 const mongoose = require('mongoose')
 const userRouter = require('./routes/userRouter')
 const envelopesRouter = require('./routes/envelopesRouter')
 const salaryRouter = require('./routes/salaryRouter')
-const authRouter = require('./routes/auth')
-
 
 //middlewares
 app.use(express.json())
@@ -34,8 +31,6 @@ app.use(cors({
 app.use('/user', userRouter)
 app.use('/envelopes', envelopesRouter)
 app.use('/salary', salaryRouter)
-app.use("/auth", authRouter);
-
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
