@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import googleIcon from '../../icons/googleIcon1.png'
-import twitterIcon from '../../icons/twitterIcon1.png'
 import './Login-register.css'
 
 const Register = () => {

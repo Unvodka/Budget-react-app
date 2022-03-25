@@ -12,7 +12,7 @@ const envelopeCtrl = {
             if(envelope) return res.status(400).json({msg: "This envelope already exists."})
 
 
-            const newEnvelope = new Envelopes ({ name, userId: req.user.id, amount })
+            const newEnvelope = new Envelopes ({ name: name.charAt(0).toUpperCase() + name.slice(1), userId: req.user.id, amount })
             await newEnvelope.save()
 
             res.json(newEnvelope)
@@ -117,6 +117,19 @@ const envelopeCtrl = {
                 if (query.deletedCount === 0) return res.status(500).json({msg: "This envelope could not be delete, please try again"})
                 
                 res.json({msg: `Deleted envelope(${id}) with success.`})
+            } catch (err) {
+                return res.status(500).json({msg: err.message})
+            }
+        },
+        deleteAllEnvelopes: async (req, res) => {
+            try {
+                const {email} = req.body
+                const query = await Envelopes.deleteMany({email})
+
+                if (query.deletedCount === 0) return res.status(500).json({msg: "This envelope could not be delete, please try again"})
+
+                res.json({msg: `Deleted all envelopes for user (${email}) with success.`})
+
             } catch (err) {
                 return res.status(500).json({msg: err.message})
             }

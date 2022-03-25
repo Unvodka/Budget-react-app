@@ -4,6 +4,7 @@
 }
 .transactions input {
   margin-left: 20px;
+  background-color: aliceblue;
 }
 
 .create, .transfer, .update {
@@ -11,6 +12,10 @@
   padding: 20px;
   margin: 10px;
 }
+.create input, .input-name, .input-amount {
+  max-width: 150px;
+}
+
 
 @media screen and (min-width: 999px) {
   .transactions {
@@ -19,6 +24,6 @@
 }
 @media screen and (max-width: 499px) {
   .transactions input {
-    margin-left: 20px;
+    margin: 0.5rem ;
   }
 }

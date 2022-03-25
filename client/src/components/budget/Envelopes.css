@@ -1,5 +1,6 @@
 .products {
   display: flex;
+  flex-wrap: wrap;
   border: 1px solid black;
   width: 200px;
   padding: 10px !important;
@@ -11,12 +12,12 @@
   width: 100vw;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .img-product {
   margin: auto;
-  width: 30px !important;
-  height: 30px !important;
+  width: 18px !important;
+  height: 18px !important;
 }
 .products p {
   font-weight: 600;

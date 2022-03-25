@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Register from './components/login/Register';
 import './App.css'
 import BudgetCtrl from './components/budget/BudgetCtrl';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
     
@@ -22,6 +23,8 @@ function App() {
               <Route path="/login" exact element={<Login />} />
                 
               <Route path="/register" exact element={<Register />} />
+
+              <Route path="/profile-page" element={<ProfilePage />} />
                 
             </Routes>
             

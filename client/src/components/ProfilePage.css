@@ -1,0 +1,56 @@
+.profile {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.profile .delete-icon {
+  height: 100px;
+  width: 300px;
+  margin: auto;
+  color: rgb(189, 3, 3);
+}
+.profile div, .profile h3, .profile p, .profile a {
+  margin: 2rem auto;
+  color: black;
+}
+.profile h3 {
+  width: 100%;
+}
+p {
+  font-weight: 500;
+}
+.profile input {
+  width: 240px;
+  background-color: aliceblue;
+}
+.btn {
+  padding: 7px 15px;
+  margin: 0 2rem;
+  background-color: rgb(51, 51, 206);
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  background-color: green;
+}
+a {
+  color: rgb(90, 89, 89);
+}
+a:hover {
+  color: black;
+}
+.icon {
+  width: 16px;
+  position: relative;
+  top: 3px;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 429px) {
+  .btn {
+    margin: 1rem;
+    background-color: green;
+  }
+}

@@ -35,6 +35,8 @@ const db = `${MONGO_URI}/${MONGO_DB_NAME}`;
 
 mongoose.connect(db, {
   useNewUrlParser: true,
+  retryWrites: true,
+  w: "majority"
 }, err => {
   if(err) throw err;
   console.log('Connected to mongoose')

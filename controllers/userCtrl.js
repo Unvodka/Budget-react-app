@@ -62,13 +62,15 @@ const userCtrl = {
             const accesstoken = createAccessToken({id: user._id})
             const refreshtoken = createRefreshToken({id: user._id})
 
+            const name = user.name
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly: true,
                 path: '/user/refresh_token',
                 maxAge: 7*24*60*60*1000 // 7d
             })
-
+            
             res.json({accesstoken})
+            return name
 
         } catch (err) {
             return res.status(500).json({msg: err.message})
@@ -78,6 +80,43 @@ const userCtrl = {
         try {
             res.clearCookie('refreshtoken', {path: '/user/refresh_token'})
             return res.json({msg: "Logged out"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    updateEmail: async (req, res) => {
+        try {
+            const {newEmail, email} = req.body
+            const existintgEmail = await Users.findOne({email: newEmail})
+            if (existintgEmail === newEmail) {
+                return res.status(400).json({msg: "This email is already taken, try with something else"})
+            }
+            const user = await Users.findOneAndUpdate({email}, {email: newEmail})
+            if(!user) return res.status(400).json({msg: "User does not exist."})
+
+            return res.json({msg: "Email changed successfully"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    getAccount: async (req, res) => {
+        try {
+            const {email} = req.body
+            const user = await Users.findOne({email})
+            return user
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    deleteAccount: async (req,res) => {
+        try {
+            const {user} = req.body
+
+            const query = await Users.deleteOne({email: user})
+            if (query.deletedCount === 0) return res.status(500).json({msg: "This user couldn't be delete, please try again"})
+
+            res.json({msg: `Deleted user (${user}) with success.`})
+            
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }

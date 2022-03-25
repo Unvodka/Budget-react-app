@@ -13,6 +13,7 @@ router.post('/create', auth, envelopeCtrl.createEnvelope)
 router.route('/update')
     .get(auth, envelopeCtrl.getOneEnvelope)
     .delete(auth, envelopeCtrl.deleteEnvelope)
+    .delete(auth, envelopeCtrl.deleteAllEnvelopes)
     .put(auth, envelopeCtrl.updateEnvelope)
 
 router.route('/transfer')
