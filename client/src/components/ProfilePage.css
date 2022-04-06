@@ -4,23 +4,20 @@
   flex-direction: column;
 }
 .profile .delete-icon {
-  height: 100px;
+  height: 80px;
   width: 300px;
   margin: auto;
   color: rgb(189, 3, 3);
 }
-.profile div, .profile h3, .profile p, .profile a {
+.profile div, .profile h3, .profile p{
   margin: 2rem auto;
   color: black;
 }
 .profile h3 {
   width: 100%;
 }
-p {
-  font-weight: 500;
-}
 .profile input {
-  width: 240px;
+  width: 220px;
   background-color: aliceblue;
 }
 .btn {
@@ -35,8 +32,12 @@ p {
 .btn:hover {
   background-color: green;
 }
-a {
+.profile a {
   color: rgb(90, 89, 89);
+  width: 200px;
+  position: fixed;
+  left: 1rem;
+  bottom: 79%;
 }
 a:hover {
   color: black;
@@ -45,12 +46,19 @@ a:hover {
   width: 16px;
   position: relative;
   top: 3px;
-  margin: 0 10px;
+  margin: 0 10px;  
 }
 
 @media screen and (max-width: 429px) {
+  .profile {
+    width: 85%;
+    margin: auto;
+  }
   .btn {
     margin: 1rem;
     background-color: green;
+  }
+  a {
+    width: fit-content;
   }
 }

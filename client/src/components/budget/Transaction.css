@@ -1,6 +1,6 @@
 .transactions {
-  margin-top: 3rem;
-  max-width: 90%;
+  margin-top: 5rem;
+  max-width: 100%;
 }
 .transactions input {
   margin-left: 20px;
@@ -11,19 +11,100 @@
   text-align: center;
   padding: 20px;
   margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.update {
+  display: none;
+  font-weight: 600;
+  width: fit-content;
+  margin: auto;
+}
+.update {
+  display: none;
+  font-weight: 600;
+  width: fit-content;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgb(143, 142, 142);
+  color: whitesmoke;
+  z-index: 3;
+  border: 1px solid black;
+}
+.update input {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .create input, .input-name, .input-amount {
   max-width: 150px;
 }
-
-
-@media screen and (min-width: 999px) {
-  .transactions {
-    margin-right: 10%;
+@media screen and (min-width: 1600px) {
+  .update {
+    bottom: 43vh;
+    left: 78vh;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .update {
+    height: 180px;
+    padding: 5px;
+    flex-direction: column;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    right: 10px;
+    margin-top: 40vh;
+  }
+  .update input {
+    margin: 5px;
+  }
+  .update button {
+    margin: 5px auto;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .update {
+    align-items: center;
+    flex-direction: row;
+    left: 0;
+    bottom: 2%;
+    width: 100%;
+    color: black;
+    height: 80px;
+    padding: 5px;
+    margin-top: 91.5vh;
   }
 }
 @media screen and (max-width: 499px) {
   .transactions input {
     margin: 0.5rem ;
+  }
+  .create, .transfer, .update {
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 5px;
+  }
+  .transactions input, .transactions button {
+    margin: 1rem auto;
+  }
+  .update {
+    height: 150px;
+    margin-top: 80vh;
+  }
+  .update p {
+    margin: 5px;
+  }
+  .update button {
+    margin: 5px auto;
+  }
+  .update input {
+    height: 2rem;
   }
 }

@@ -1,5 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://arnaud:wL1X3wVWYB8q2ILj@cluster0.jtde2.mongodb.net/nodeBudget?retryWrites=true&w=majority",
-  "ACCESS_TOKEN_SECRET": "7SY3XLANPGLcJ3XphDM45MqzwbrxAFznr2NKEpASW4ejVzny4T",
-  "REFRESH_TOKEN_SECRET": "LJEfVEWAeukTJTyQ5mkPQmP57MZdFJQw9xz9ahrtrQzTM53Z8KKLpZxuWM7zw5TqByRBskK36BhLwZ7RNeGfQNt3qDL8qsXUt9dB"
-}

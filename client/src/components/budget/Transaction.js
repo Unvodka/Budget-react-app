@@ -1,26 +1,20 @@
 import React from 'react'
 import './Transaction.css'
 
-const Transaction = ({Create, Update, Transfer}) => {  
+const Transaction = ({Create, Transfer}) => {  
 
   return (
     <div className='transactions'>
       
       <form className='create' onSubmit={Create}>
-        Create :
+        <p>Create :</p>
           <input className='input-name' type='text' placeholder='name'/>
           <input className='input-amount' type='number' placeholder='amount'/>
           <button className='btn-form' type='submit'>Create</button>
       </form>
-      <form className='update' onSubmit={Update}>
-        Update :
-          <input className='input-name' type='text' placeholder='name'/>
-          <input className='input-amount' type='number' placeholder='amount'/>
-          <input className='input-description' type='text' placeholder='description'/>
-          <button className='btn-form' type='submit' >Update</button>
-      </form>
+      
       <form className='transfer' onSubmit={Transfer}>
-      Transfer :
+        <p>Transfer :</p> 
           <input className='input-name' type='text' placeholder='name from'/>
           <input className='input-amount' type='number' placeholder='amount'/>
           <input className='input-name' type='text' placeholder='name to'/>

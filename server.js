@@ -39,7 +39,7 @@ mongoose.connect(db, {
   w: "majority"
 }, err => {
   if(err) throw err;
-  console.log('Connected to mongoose')
+  console.log(`Connected to ${MONGO_DB_NAME}, with mongoose`)
 })
 
 // Serve static assets if in production

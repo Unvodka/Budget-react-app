@@ -1,34 +1,42 @@
-h3 {
+h2 {
   text-align: center;
   color: whitesmoke;
-  width: 150px;
-  margin: 1rem 46%;
-  border-radius: 5px;
   padding: 5px;
   letter-spacing: 1px;
+  width: 180px;
   max-width: 90%;
+  margin: 2rem auto 0 auto;
 }
 .red {
-  background-color: rgb(189, 35, 35);
-  border: 1px solid black;
+  color: rgb(189, 35, 35);
+  border-radius: 0;
 }
 .green {
-  background-color: rgb(41, 119, 41);
+  color: rgb(41, 119, 41);
   border-radius: 0;
 }
 .salary {
+  display: flex;
+  justify-content: center;
   font-weight: 600;
-  max-width: 30%;
+  max-width: 35vw;
   margin:  auto;
   text-align: center;
+  align-items: center;
+}
+.salary-form {
+  display: flex;
+  align-items: center;
 }
 .salary input {
-  max-width: 150px;
-  color: aliceblue;
+  max-width: 100px;
+  background-color: aliceblue;
+  margin: 1rem;
+  font-size: 16px;
+  font-weight: 600;
 }
 .salary p {
-  margin: 10px;
-  width: 100%;
+  font-weight: 600;
 }
 .main {
   display: flex;
@@ -46,6 +54,8 @@ table {
   border: 1px solid black;
   margin: 1rem 0.25rem;
   text-align: center;
+  border-radius: 5px;
+  width: 130px;
 }
 th {
   background-color: rgb(71, 71, 71);
@@ -56,8 +66,23 @@ td {
   background-color: whitesmoke;
   color: rgb(71, 71, 71);
 }
+.btn-form {
+  padding: 7px 0;
+}
 
-
+@media screen and (min-width: 1200px) {
+  .previsions {
+    margin: 27vh 2.3rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .red, .green {
+    position: fixed;
+    left: 2.5rem;
+    bottom: 52%;
+    text-shadow: 2px 1px white;
+  }
+}
 @media screen and (max-width: 720px) {
   .salary {
     position: relative;
@@ -72,13 +97,19 @@ td {
 @media screen and (max-width: 499px) {
   .previsions {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .salary {
     left: 0;
   }
-  h3 {
+  h2 {
     margin: auto;
     width: 100px;
+  }
+  .red, .green {
+    width: 100%;
+  }
+  table {
+    margin: auto;
   }
 }

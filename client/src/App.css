@@ -21,7 +21,6 @@ a {
   background-color: rgb(37, 95, 25);
   color: white;
   padding: 0.25rem;
-  margin-top: 0.5rem;
   margin-left: 1rem;
   cursor: pointer;
   width: 6rem;
@@ -34,12 +33,12 @@ a {
   transform: scale(1.1);
 }
 .btn-delete {
-  background-color: brown;
-  height: 1.25rem;
+  height: 0.5rem;
   width: 1.25rem;
-  color: aliceblue;
+  color: brown;
   cursor: pointer;
   font-weight: bolder;
+  border: none;
 }
 
 input {
@@ -50,8 +49,11 @@ input {
   border-bottom: 1px solid black;
   background-color: white;
 }
-form {
+.login-register form {
   font-weight: bolder;
+}
+p {
+  font-size: 18px;
 }
 
 @media screen and (max-width: 499px) {

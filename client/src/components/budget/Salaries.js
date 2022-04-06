@@ -1,16 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Salaries.css'
+import SalariesAPI from '../../api/salaries'
 
-const Salaries = ({ salaries, Add }) => {
-  
+const Salary = ({ salaries, Add }) => {
+
+  const [salary, setSalary] = useState([salaries.amount])
+  const [value, setValue] = useState([])
+
+  const onChangeSalary = (e) => {
+    e.preventDefault()
+    setSalary(e.target.value)
+  }
+
+  useEffect(() =>{
+    const getSalary = async () => {
+      try {
+        const res = await SalariesAPI.fetch()
+        setSalary(res.data.amount)
+
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getSalary()
+  }, [value]) 
+
   return (
     
-    <div key={salaries.id} className='salary'>
-      <p>Your current salary is : {[salaries.amount]} $ </p>
+    <div key={salary.id} className='salary'>
+      <p>Change your salary here : </p>
 
       <form className='salary-form' onSubmit={Add}>
 
-        <input type="number" placeholder='Enter a salary here'></input>
+        <input type="number" placeholder="Enter salary here" value={salary} onChange={onChangeSalary}></input>
+        <p>$</p>
         <button type="submit" className='btn-form'>Confirm</button>
 
       </form>
@@ -19,4 +42,4 @@ const Salaries = ({ salaries, Add }) => {
   )
 }
 
-export default Salaries
+export default Salary

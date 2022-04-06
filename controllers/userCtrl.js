@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken')
 const userCtrl = {
     
     register: async (req, res) =>{
-        
         try {
             const {name, email, password} = req.body;
 
@@ -137,11 +136,8 @@ const userCtrl = {
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
-        
     }
- 
  }
-
 
 const createAccessToken = (user) =>{
     return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '7d'})
