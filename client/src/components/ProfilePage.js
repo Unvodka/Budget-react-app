@@ -34,6 +34,8 @@ const ProfilePage = () => {
         localStorage.clear();
         sessionStorage.clear();
         window.location.href = "/register";
+        alert("Account deleted with successs")
+        res.json(user)
     } catch (err) {
       console.log(err)
     }

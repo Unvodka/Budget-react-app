@@ -53,6 +53,7 @@ const BudgetCtrl = () => {
 
     setProducts([...products])
     alert(`Envelope ${body.name} updated with success`)
+    res.json(body)
   }
 
   const onDelete = async (e, id) => {
@@ -62,6 +63,7 @@ const BudgetCtrl = () => {
     const res = await EnvelopesAPI.deleteIt({id})
     setProducts([...products.filter((product) => product._id !== id)])
     alert(`Envelope ${id} deleted with success`)
+    res.json(id)
   }
 
   useEffect(() =>{
@@ -99,8 +101,8 @@ const BudgetCtrl = () => {
       <Salaries salaries={salary} Add={Add}/>
 
       {saving < 100 ? <h2 className='red'>Alert Budget, your saving is low</h2> : ""}
-      {saving < 100 ? <h2 className='red'>Your Saving</h2> : <h2 className='green'>Your Saving</h2>}
-     
+      {saving < 100 ? <h3 className='red'>Your Saving</h3> : <h3 className='green'>Your Saving</h3>}
+
       <div className='previsions'>
         <table>
           <thead><tr><th>Month</th></tr></thead>

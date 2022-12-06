@@ -59,3 +59,14 @@ p {
 @media screen and (max-width: 499px) {
 
 }
+
+@media screen and (min-width: 1199px) {
+  .total {
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 1599px) {
+  .total {
+    margin: auto;
+  }
+}

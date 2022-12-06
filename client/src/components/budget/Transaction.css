@@ -50,6 +50,18 @@
     left: 78vh;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .transactions {
+    margin-left: 14%;
+  }
+}
+@media  screen and (min-width: 1600px) {
+  .transactions {
+    margin: auto;
+  }
+}
+
 @media screen and (max-width: 1600px) {
   .update {
     height: 180px;
