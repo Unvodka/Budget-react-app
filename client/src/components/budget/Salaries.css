@@ -7,6 +7,7 @@ h2 {
   max-width: 90%;
   margin: 2rem auto 0 auto;
 }
+
 .red {
   color: rgb(189, 35, 35);
   border-radius: 0;
@@ -19,7 +20,7 @@ h2 {
   display: flex;
   justify-content: center;
   font-weight: 600;
-  max-width: 35vw;
+  max-width: 36vw;
   margin:  auto;
   text-align: center;
   align-items: center;
@@ -72,15 +73,24 @@ td {
 
 @media screen and (min-width: 1200px) {
   .previsions {
-    margin: 27vh 2.3rem;
+    margin: 27vh 1rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .salary {
+    margin: auto;
   }
 }
 @media screen and (min-width: 1200px) {
   .red, .green {
-    position: fixed;
-    left: 2.5rem;
-    bottom: 52%;
+    position: absolute;
+    left: 1rem;
+    top: 25%;
     text-shadow: 2px 1px white;
+  }
+  h3 {
+    margin-left: 2.5rem;
   }
 }
 @media screen and (max-width: 720px) {

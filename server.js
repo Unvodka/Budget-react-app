@@ -41,6 +41,7 @@ mongoose.connect(db, {
   if(err) throw err;
   console.log(`Connected to ${MONGO_DB_NAME}, with mongoose`)
 })
+mongoose.set('strictQuery', false) // not sure about it
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
