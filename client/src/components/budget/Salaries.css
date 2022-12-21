@@ -13,6 +13,7 @@ h2 {
   border-radius: 0;
 }
 .green {
+  text-align: center;
   color: rgb(41, 119, 41);
   border-radius: 0;
 }
@@ -86,7 +87,7 @@ td {
   .red, .green {
     position: absolute;
     left: 1rem;
-    top: 25%;
+    top: 30vh;
     text-shadow: 2px 1px white;
   }
   h3 {

@@ -1,5 +1,6 @@
 .transactions {
   margin-top: 5rem;
+  margin-left: 12.5vw;
   max-width: 100%;
 }
 .transactions input {
@@ -15,28 +16,28 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .update {
   display: none;
   font-weight: 600;
-  width: fit-content;
-  margin: auto;
-}
-.update {
-  display: none;
-  font-weight: 600;
-  width: fit-content;
+  width: 50vw;
   text-align: center;
-  padding: 10px;
-  margin: 10px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color: rgb(143, 142, 142);
-  color: whitesmoke;
+  bottom: 0;
+  background-color: rgba(143, 142, 142, 0.466);
+  color: black;
   z-index: 3;
   border: 1px solid black;
+  border-radius: 5px;
+  padding: 1vw;
+  position: fixed;
+  bottom: 1vh !important;
+  left: 25vw !important;
 }
+
 .update input {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -44,18 +45,7 @@
 .create input, .input-name, .input-amount {
   max-width: 150px;
 }
-@media screen and (min-width: 1600px) {
-  .update {
-    bottom: 43vh;
-    left: 78vh;
-  }
-}
 
-@media screen and (min-width: 1200px) {
-  .transactions {
-    margin-left: 14%;
-  }
-}
 @media  screen and (min-width: 1600px) {
   .transactions {
     margin: auto;
@@ -63,16 +53,6 @@
 }
 
 @media screen and (max-width: 1600px) {
-  .update {
-    height: 180px;
-    padding: 5px;
-    flex-direction: column;
-    position: fixed;
-    margin: 0;
-    top: 0;
-    right: 10px;
-    margin-top: 40vh;
-  }
   .update input {
     margin: 5px;
   }
@@ -80,24 +60,19 @@
     margin: 5px auto;
   }
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 999px) {
   .update {
-    align-items: center;
-    flex-direction: row;
-    left: 0;
-    bottom: 2%;
-    width: 100%;
-    color: black;
-    height: 80px;
-    padding: 5px;
-    margin-top: 91.5vh;
+    font-size: smaller !important;
+    width: 95vw;
+    left: 2.5vw !important;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 499px) {
   .transactions input {
     margin: 0.5rem ;
   }
-  .create, .transfer, .update {
+  .create, .transfer {
     flex-direction: column;
     justify-content: center;
     margin: auto;
@@ -106,17 +81,25 @@
   .transactions input, .transactions button {
     margin: 1rem auto;
   }
-  .update {
-    height: 150px;
-    margin-top: 80vh;
-  }
   .update p {
-    margin: 5px;
+    font-size: 14px;
   }
   .update button {
     margin: 5px auto;
   }
+
+}
+@media screen and (max-width: 299px) {
+  .update {
+    width: 100vw !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    border-radius: 0;
+  }
+  .update input, .update .btn-form, .update p {
+    font-size: 10px !important;
+  }
   .update input {
-    height: 2rem;
+    width: 70px;
   }
 }

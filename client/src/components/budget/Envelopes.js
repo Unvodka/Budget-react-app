@@ -44,8 +44,8 @@ const Envelopes = ({products, onDelete, Update}) =>  {
                 {[product.name + ':  '+ product.amount + ' $']}
               </div> */}
               <input value={[product.name + ':  '+ product.amount + ' $']} 
-                     name={product.name} id={product._id} 
-                     onClick={toggle} onChange={onChange} className='envelopesTxt'/>        
+                    name={product.name} id={product._id} 
+                    onClick={toggle} onChange={onChange} className='envelopesTxt'/>        
             </Card>
             <form name={product.name} className='update' onSubmit={Update} id={product.name} key={product._id}>
                 <p>Update :</p>
