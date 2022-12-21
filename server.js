@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 const userRouter = require('./routes/userRouter')
 const envelopesRouter = require('./routes/envelopesRouter')
 const salaryRouter = require('./routes/salaryRouter')
+const path = require('path')
 
 //middlewares
 app.use(express.json())
