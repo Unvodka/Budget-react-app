@@ -2,12 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border: 1px solid black;
-  width: 250px;
-  height: 100px;
+  width: fit-content;
+  height: fit-content;
   cursor: pointer;
-  margin: 1rem;
+  margin: 0.5rem;
+  padding: 0 0.5rem;
 }
 .products-list {
   display: flex;
@@ -43,13 +45,11 @@
 }
 .envelopesTxt {
   display: flex;
-  height: 3.6rem;
-  width: 248px;
+  width: 150px;
   padding: 0 !important;
-  margin-top: 11px;
   font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.10rem;
+  font-size: 12px;
+  letter-spacing: 1px;
   border: none;
 }
 .envelopesTxt:hover {
@@ -60,8 +60,9 @@
   border: none !important;
 }
 .btn-delete-envelope {
-  margin-right: 85%;
-  margin-top: 5px;
+  position: relative;
+  left: 4.5rem;
+  top: 0.25rem;
 }
 
 @media screen and (min-width: 1600px) {
@@ -77,7 +78,7 @@
     left: 1.5rem;
   }
   .products-list {
-    margin-left: 20%;
+    margin-left: 20vw;
   }
 }
 @media screen and (max-width: 720px) {
@@ -87,9 +88,18 @@
   }
   .products {
     margin: 1rem auto;
+    width: 200px;
+  }
+  .btn-delete-envelope {
+    left: 5.3rem;
   }
   .salary-previsions {
     width: 100%;
     bottom: -2rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .btn-delete-envelope {
+    left: 32vw;
   }
 }

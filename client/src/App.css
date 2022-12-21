@@ -33,7 +33,7 @@ a {
   transform: scale(1.1);
 }
 .btn-delete {
-  height: 0.5rem;
+  background-color: white;
   width: 1.25rem;
   color: brown;
   cursor: pointer;
@@ -57,7 +57,10 @@ p {
 }
 
 @media screen and (max-width: 499px) {
-
+  .update input {
+    font-size: 12px;
+    width: 80px;
+  }
 }
 
 @media screen and (min-width: 1199px) {
