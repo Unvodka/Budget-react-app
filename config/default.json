@@ -1,4 +1,4 @@
 {
-    "mongoUri": "mongodb+srv://arnaud:wL1X3wVWYB8q2ILj@cluster0.jtde2.mongodb.net/nodeBudget?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://arnaud:wL1X3wVWYB8q2ILj@cluster0.jtde2.mongodb.net/nodeBudget?retryWrites=true&w=majority",
     "accessTokenSecret": "7SY3XLANPGLcJ3XphDM45MqzwbrxAFznr2NKEpASW4ejVzny4T"
 }
