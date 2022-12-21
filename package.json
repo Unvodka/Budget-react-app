@@ -2,6 +2,9 @@
   "name": "budgetnodeapp",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "18.12.1"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
