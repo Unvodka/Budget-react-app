@@ -16,7 +16,7 @@ const Register = () => {
     const registerSubmit = async e =>{
         e.preventDefault()
         try {
-            await axios.post('http://localhost:3005/user/register', user)
+            await axios.post('https://polar-retreat-98644.herokuapp.com/user/register', user)
               .then(res => console.log(res.data))
             
             window.location.href = "/login";
@@ -46,7 +46,7 @@ const Register = () => {
               <button className="btn-login">Register</button>
               
               <Link to="/login" >LOGIN</Link>
-             
+        
         </fieldset>
     </form>
     )

@@ -18,7 +18,7 @@ const Login = () => {
         e.preventDefault()
         try {
             
-            const res = await axios.post('http://localhost:3005/user/login', user)
+            const res = await axios.post('https://polar-retreat-98644.herokuapp.com/user/login', user)
 
             localStorage.setItem('firstLogin', true)
             localStorage.setItem('accessToken', res.data.accesstoken)
