@@ -17,7 +17,6 @@ const Login = () => {
     const loginSubmit = async (e) => {
         e.preventDefault()
         try {
-            const secretOrPrivateKey = 'donttouchmysecret'
             const res = await axios.post('https://polar-retreat-98644.herokuapp.com/user/login', user)
 
             localStorage.setItem('firstLogin', true)

@@ -137,13 +137,13 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     }
- }
+}
 
 const createAccessToken = (user) =>{
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '7d'})
+    return jwt.sign(user, { privateKey: process.env.ACCESS_TOKEN_SECRET }, { algorithm: 'RS256', allowInsecureKeySizes: true , expiresIn: '7d'})
 }
 const createRefreshToken = (user) =>{
-    return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '7d'})
+    return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, { algorithm: 'RS256', allowInsecureKeySizes: true , expiresIn: '7d'})
 }
 
 module.exports = userCtrl
