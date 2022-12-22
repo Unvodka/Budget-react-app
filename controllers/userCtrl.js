@@ -140,10 +140,10 @@ const userCtrl = {
 }
 
 const createAccessToken = (user) =>{
-    return jwt.sign(user, {secretOrPrivateKey: `${process.env.SECRET_TOKEN}`}, { expiresIn: '7d'})
+    return jwt.sign({id: user._id}, {secretOrPrivateKey: process.env.SECRET_TOKEN}, { expiresIn: '7d'})
 }
 const createRefreshToken = (user) =>{
-    return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '7d'})
+    return jwt.sign({id: user._id}, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '7d'})
 }
 
 module.exports = userCtrl
