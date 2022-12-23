@@ -59,7 +59,7 @@ const userCtrl = {
 
             // If login success , create access token and refresh token
             const secret = { secretOrPrivateKey: process.env.SECRET_TOKEN };
-            const token = jwt.sign({ id: user._id }, secret, { expiresIn: '7d' });
+            const token = jwt.sign({ id: user._id }, secret, { algorithm: 'RS256', expiresIn: '7d' });
 
             const accesstoken = createAccessToken({id: user._id})
             const refreshtoken = createRefreshToken({id: user._id})
@@ -143,7 +143,7 @@ const userCtrl = {
 }
 
 const createAccessToken = (user) =>{
-    return jwt.sign({id: user._id}, process.env.SECRET_TOKEN, { expiresIn: '7d'})
+    return jwt.sign({id: user._id}, process.env.SECRET_TOKEN, { algorithm: 'RS256', expiresIn: '7d'})
 }
 const createRefreshToken = (user) =>{
     return jwt.sign({id: user._id}, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '7d'})
