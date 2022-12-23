@@ -58,7 +58,7 @@ const userCtrl = {
             if(!isMatch) return res.status(400).json({msg: "Incorrect password."})
 
             // If login success , create access token and refresh token
-            const secret = { secretOrPrivateKey: process.env.SECRET_TOKEN };
+            const secret = process.env.SECRET_TOKEN;
             const token = jwt.sign({ id: user._id }, secret, { expiresIn: '7d' });
             const accesstoken = createAccessToken({id: user._id})
             const refreshtoken = createRefreshToken({id: user._id})
