@@ -58,6 +58,8 @@ const userCtrl = {
             if(!isMatch) return res.status(400).json({msg: "Incorrect password."})
 
             // If login success , create access token and refresh token
+            const secret = { secretOrPrivateKey: process.env.SECRET_TOKEN };
+            const token = jwt.sign({ id: user._id }, secret, { expiresIn: '7d' });
             const accesstoken = createAccessToken({id: user._id})
             const refreshtoken = createRefreshToken({id: user._id})
 
@@ -140,7 +142,7 @@ const userCtrl = {
 }
 
 const createAccessToken = (user) =>{
-    return jwt.sign({id: user._id}, {secretOrPrivateKey: process.env.SECRET_TOKEN}, { expiresIn: '7d'})
+    return jwt.sign({id: user._id}, process.env.SECRET_TOKEN, { expiresIn: '7d'})
 }
 const createRefreshToken = (user) =>{
     return jwt.sign({id: user._id}, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '7d'})
