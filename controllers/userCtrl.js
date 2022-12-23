@@ -56,9 +56,10 @@ const userCtrl = {
 
             const isMatch = await bcrypt.compare(password, user.password)
             if(!isMatch) return res.status(400).json({msg: "Incorrect password."})
-
+            
             // If login success , create access token and refresh token
             const secret = { secretOrPrivateKey: process.env.SECRET_TOKEN };
+            console.log(secret)
             const token = jwt.sign({ id: user._id }, secret, { algorithm: 'RS256', expiresIn: '7d' });
 
             const accesstoken = createAccessToken({id: user._id})
