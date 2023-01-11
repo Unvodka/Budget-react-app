@@ -8,9 +8,6 @@
   margin: 1rem;
   z-index: 2;
 }
-.header h1 {
-  margin-bottom: 0.75rem;
-}
 .header a {
   color: rgb(77, 75, 75);
   width: 200px;
@@ -41,7 +38,9 @@
 }
 .logout-dropdown {
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  margin: 1rem;
   color: rgb(37, 37, 37);
 }
 

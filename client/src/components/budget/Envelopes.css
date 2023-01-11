@@ -5,8 +5,6 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  width: fit-content;
-  height: fit-content;
   cursor: pointer;
   margin: 0.5rem;
   padding: 0 0.5rem;
@@ -16,14 +14,13 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: auto;
-  width: 70%;
+  margin: 2rem auto 0 auto;
+  width: 90%;
 }
 .salary-previsions {
   position: relative;
-  bottom: 3rem;
   max-width: 100%;
-  margin: auto;
+  margin: 0 auto 6rem auto;
 }
 .img-product {
   margin: auto;
@@ -41,13 +38,12 @@
 .total p {
   text-align: center;
   font-weight: 600;
-  margin: 4rem auto 0.5rem auto;
+  margin: 2rem auto;
 }
 .envelopesTxt {
   display: flex;
-  width: 150px;
   padding: 0 !important;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   letter-spacing: 1px;
   border: none;
@@ -62,7 +58,7 @@
 .btn-delete-envelope {
   position: relative;
   left: 4.5rem;
-  top: 0.25rem;
+  top: 0.15rem;
 }
 
 @media screen and (min-width: 1600px) {
@@ -70,17 +66,12 @@
     width: 70vw;
   }
 }
-@media screen and (min-width: 1200px) {
-  .previsions {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 1.5rem;
-  }
-  .products-list {
-    margin-left: 20vw;
+@media screen and (min-width: 720px) {
+  .envelopesTxt {
+    font-size: 14px;
   }
 }
+
 @media screen and (max-width: 720px) {
   .products-list {
     flex-direction: column;
@@ -95,7 +86,6 @@
   }
   .salary-previsions {
     width: 100%;
-    bottom: -2rem;
   }
 }
 @media screen and (max-width: 300px) {

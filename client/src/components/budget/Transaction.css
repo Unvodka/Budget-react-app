@@ -1,6 +1,5 @@
 .transactions {
-  margin-top: 5rem;
-  margin-left: 12.5vw;
+  margin: 2rem auto;
   max-width: 100%;
 }
 .transactions input {
@@ -8,7 +7,9 @@
   background-color: aliceblue;
 }
 
-.create, .transfer, .update {
+.create,
+.transfer,
+.update {
   text-align: center;
   padding: 20px;
   margin: 10px;
@@ -20,33 +21,33 @@
 .update {
   display: none;
   font-weight: 600;
-  width: 50vw;
+  width: 40vw;
   text-align: center;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  background-color: rgba(143, 142, 142, 0.466);
+  background-color: rgba(143, 142, 142, 0.209);
   color: black;
   z-index: 3;
   border: 1px solid black;
   border-radius: 5px;
-  padding: 1vw;
+  padding: 0.8vw;
   position: fixed;
-  bottom: 1vh !important;
-  left: 25vw !important;
+  bottom: 6vh !important;
+  left: 30vw !important;
 }
 
 .update input {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.create input, .input-name, .input-amount {
+.create input,
+.input-name,
+.input-amount {
   max-width: 150px;
 }
 
-@media  screen and (min-width: 1600px) {
+@media screen and (min-width: 1600px) {
   .transactions {
     margin: auto;
   }
@@ -57,7 +58,7 @@
     margin: 5px;
   }
   .update button {
-    margin: 5px auto;
+    margin: 5px;
   }
 }
 @media screen and (max-width: 999px) {
@@ -65,20 +66,22 @@
     font-size: smaller !important;
     width: 95vw;
     left: 2.5vw !important;
-    margin: 0 auto;
+    margin: 1rem auto;
   }
 }
 @media screen and (max-width: 499px) {
   .transactions input {
-    margin: 0.5rem ;
+    margin: 0.5rem;
   }
-  .create, .transfer {
+  .create,
+  .transfer {
     flex-direction: column;
     justify-content: center;
     margin: auto;
     padding: 5px;
   }
-  .transactions input, .transactions button {
+  .transactions input,
+  .transactions button {
     margin: 1rem auto;
   }
   .update p {
@@ -87,7 +90,6 @@
   .update button {
     margin: 5px auto;
   }
-
 }
 @media screen and (max-width: 299px) {
   .update {
@@ -96,7 +98,9 @@
     bottom: 0 !important;
     border-radius: 0;
   }
-  .update input, .update .btn-form, .update p {
+  .update input,
+  .update .btn-form,
+  .update p {
     font-size: 10px !important;
   }
   .update input {

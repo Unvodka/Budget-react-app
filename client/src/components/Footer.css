@@ -1,5 +1,13 @@
 .footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 1rem;
   max-width: 100%;
+  background-color: rgba(202, 221, 227);
+  height: 4rem;
+  width: 100vw;
+  border-top: 1px solid black;
 }
